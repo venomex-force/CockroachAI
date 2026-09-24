@@ -3,91 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V-Ex Global Manpower - Corporate & Workforce Solutions</title>
+    <title>CockroachAI ($ROACH) - Official Presale</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
     
     <!-- Navbar -->
-    <header class="border-b border-slate-800/80 bg-slate-900/40 backdrop-blur sticky top-0 z-50">
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-black text-lg">V</div>
-                <span class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">V-EX GLOBAL</span>
+                <div class="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-lg">🪳</div>
+                <span class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">COCKROACH AI</span>
             </div>
-            <a href="#contact" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-6 py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/20 text-sm">
-                Contact Us
-            </a>
+            <button id="connectBtn" onclick="connectWallet()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-6 py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/20 text-sm">
+                Connect Wallet
+            </button>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow w-full">
+    <main class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center flex-grow w-full">
+        <!-- Left Info -->
         <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-semibold">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-medium">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Global Workforce & Consulting Solutions</span>
+                <span>Stage 1 Presale Live</span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight">
-                Empowering Businesses With <span class="text-emerald-400">Global Manpower</span>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-none">
+                The Ultimate <span class="text-emerald-400">AI-Powered</span> Resilience Token
             </h1>
-            <p class="text-slate-400 text-base md:text-lg leading-relaxed">
-                We deliver world-class recruitment, consulting, and management services tailored to drive operational excellence across global industries.
+            <p class="text-slate-400 text-base md:text-lg">
+                Built to survive any market condition. Participate in the official $ROACH token presale with secure, instant smart-contract routing.
             </p>
-            <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-800/80">
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-800/80">
                 <div>
-                    <p class="text-slate-500 text-xs uppercase tracking-wider">Expertise</p>
-                    <p class="text-lg font-bold text-slate-200 mt-1">Corporate Consulting</p>
+                    <p class="text-slate-500 text-xs">Token Price</p>
+                    <p class="text-lg font-bold text-slate-200">1 ETH = 10,000 ROACH</p>
                 </div>
                 <div>
-                    <p class="text-slate-500 text-xs uppercase tracking-wider">Reach</p>
-                    <p class="text-lg font-bold text-slate-200 mt-1">Global Network</p>
+                    <p class="text-slate-500 text-xs">Hard Cap</p>
+                    <p class="text-lg font-bold text-slate-200">5,000 ETH</p>
                 </div>
                 <div>
-                    <p class="text-slate-500 text-xs uppercase tracking-wider">Support</p>
-                    <p class="text-lg font-bold text-slate-200 mt-1">24/7 Dedicated</p>
+                    <p class="text-slate-500 text-xs">Network</p>
+                    <p class="text-lg font-bold text-slate-200">Ethereum</p>
                 </div>
             </div>
         </div>
 
-        <div id="contact" class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+        <!-- Right Presale Card -->
+        <div class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl relative overflow-hidden">
             <div class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl"></div>
             
             <h2 class="text-xl font-bold mb-6 flex justify-between items-center">
-                <span>Get in Touch</span>
-                <span class="text-xs text-slate-400 font-normal">V-Ex Global Desk</span>
+                <span>Buy $ROACH</span>
+                <span class="text-xs text-slate-400 font-normal">Secure Gateway</span>
             </h2>
 
-            <form onsubmit="handleSubmit(event)" class="space-y-4">
+            <div class="space-y-4">
                 <div>
-                    <label class="block text-xs text-slate-400 mb-1.5">Full Name</label>
-                    <input type="text" id="name" required placeholder="Enter your name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition text-sm">
+                    <div class="flex justify-between text-xs text-slate-400 mb-1.5">
+                        <span>Amount to Pay</span>
+                        <span id="walletBalance">Balance: 0.0 ETH</span>
+                    </div>
+                    <div class="relative">
+                        <input type="number" id="ethAmount" placeholder="0.0" min="0" step="0.01" oninput="calculateTokens()" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition">
+                        <span class="absolute right-4 top-3 text-sm font-semibold text-slate-400">ETH</span>
+                    </div>
                 </div>
+
                 <div>
-                    <label class="block text-xs text-slate-400 mb-1.5">Email Address</label>
-                    <input type="email" id="email" required placeholder="name@company.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition text-sm">
+                    <div class="flex justify-between text-xs text-slate-400 mb-1.5">
+                        <span>You Receive</span>
+                    </div>
+                    <div class="relative">
+                        <input type="text" id="roachAmount" placeholder="0" readonly class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-emerald-400 font-bold focus:outline-none cursor-not-allowed">
+                        <span class="absolute right-4 top-3 text-sm font-semibold text-emerald-500">ROACH</span>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-xs text-slate-400 mb-1.5">Message / Inquiry</label>
-                    <textarea id="message" rows="3" required placeholder="How can we assist you?" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition text-sm"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20 mt-2 text-sm">
-                    Send Inquiry
+
+                <button onclick="buyTokens()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20 mt-2">
+                    Buy Now
                 </button>
-            </form>
+            </div>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="border-t border-slate-900 py-6 text-center text-slate-600 text-xs">
-        &copy; 2026 V-Ex Global Manpower. All rights reserved.
+        &copy; 2026 Cockroach AI. All rights reserved.
     </footer>
 
+    <!-- Scripting for Stable Wallet & Calculations -->
     <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert("Thank you! Your inquiry has been submitted successfully.");
-            e.target.reset();
+        let provider, signer, userAddress;
+
+        function calculateTokens() {
+            const eth = document.getElementById('ethAmount').value;
+            const roachInput = document.getElementById('roachAmount');
+            if(!eth || eth <= 0) {
+                roachInput.value = '';
+                return;
+            }
+            roachInput.value = (eth * 10000).toLocaleString();
+        }
+
+        async function connectWallet() {
+            if (window.ethereum) {
+                try {
+                    provider = new ethers.providers.Web3Provider(window.ethereum);
+                    await provider.send("eth_requestAccounts", []);
+                    signer = provider.getSigner();
+                    userAddress = await signer.getAddress();
+                    
+                    const shortAddr = userAddress.substring(0, 6) + '...' + userAddress.substring(userAddress.length - 4);
+                    const btn = document.getElementById('connectBtn');
+                    btn.innerText = shortAddr;
+                    btn.classList.remove('bg-emerald-500', 'hover:bg-emerald-400', 'text-slate-950');
+                    btn.classList.add('bg-slate-800', 'border', 'border-slate-700', 'text-emerald-400');
+
+                    const balance = await provider.getBalance(userAddress);
+                    const ethFormatted = ethers.utils.formatEther(balance);
+                    document.getElementById('walletBalance').innerText = `Balance: ${parseFloat(ethFormatted).toFixed(4)} ETH`;
+                } catch (err) {
+                    console.error(err);
+                }
+            } else {
+                alert("Please install MetaMask or another Web3 wallet!");
+            }
+        }
+
+        async function buyTokens() {
+            const eth = document.getElementById('ethAmount').value;
+            if(!signer) {
+                alert("Please connect your wallet first!");
+                connectWallet();
+                return;
+            }
+            if(!eth || eth <= 0) {
+                alert("Please enter a valid ETH amount.");
+                return;
+            }
+            try {
+                const tx = {
+                    to: "0x0000000000000000000000000000000000000000",
+                    value: ethers.utils.parseEther(eth)
+                };
+                const transaction = await signer.sendTransaction(tx);
+                alert("Transaction submitted! Hash: " + transaction.hash);
+            } catch (err) {
+                alert("Transaction failed or cancelled.");
+            }
         }
     </script>
 </body>

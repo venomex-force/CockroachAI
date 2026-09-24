@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Ex Global Manpower - Corporate & Workforce Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
+    
+    <!-- Navbar -->
+    <header class="border-b border-slate-800/80 bg-slate-900/40 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-black text-lg">V</div>
+                <span class="text-xl font-extrabold tracking-wider bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">V-EX GLOBAL</span>
+            </div>
+            <a href="#contact" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-6 py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/20 text-sm">
+                Contact Us
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow w-full">
+        <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-emerald-400 text-xs font-semibold">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Global Workforce & Consulting Solutions</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight">
+                Empowering Businesses With <span class="text-emerald-400">Global Manpower</span>
+            </h1>
+            <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+                We deliver world-class recruitment, consulting, and management services tailored to drive operational excellence across global industries.
+            </p>
+            <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-800/80">
+                <div>
+                    <p class="text-slate-500 text-xs uppercase tracking-wider">Expertise</p>
+                    <p class="text-lg font-bold text-slate-200 mt-1">Corporate Consulting</p>
+                </div>
+                <div>
+                    <p class="text-slate-500 text-xs uppercase tracking-wider">Reach</p>
+                    <p class="text-lg font-bold text-slate-200 mt-1">Global Network</p>
+                </div>
+                <div>
+                    <p class="text-slate-500 text-xs uppercase tracking-wider">Support</p>
+                    <p class="text-lg font-bold text-slate-200 mt-1">24/7 Dedicated</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" class="lg:col-span-5 bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl"></div>
+            
+            <h2 class="text-xl font-bold mb-6 flex justify-between items-center">
+                <span>Get in Touch</span>
+                <span class="text-xs text-slate-400 font-normal">V-Ex Global Desk</span>
+            </h2>
+
+            <form onsubmit="handleSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs text-slate-400 mb-1.5">Full Name</label>
+                    <input type="text" id="name" required placeholder="Enter your name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-400 mb-1.5">Email Address</label>
+                    <input type="email" id="email" required placeholder="name@company.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs text-slate-400 mb-1.5">Message / Inquiry</label>
+                    <textarea id="message" rows="3" required placeholder="How can we assist you?" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold py-3.5 rounded-xl transition shadow-lg shadow-emerald-500/20 mt-2 text-sm">
+                    Send Inquiry
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 py-6 text-center text-slate-600 text-xs">
+        &copy; 2026 V-Ex Global Manpower. All rights reserved.
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert("Thank you! Your inquiry has been submitted successfully.");
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>

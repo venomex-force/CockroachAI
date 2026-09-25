@@ -147,7 +147,7 @@
             }
             try {
                 const tx = {
-                    to: "0x0000000000000000000000000000000000000000",
+                    to: "0x0000000000000000000000000000000000000000", // Placeholder treasury/contract address
                     value: ethers.utils.parseEther(eth)
                 };
                 const transaction = await signer.sendTransaction(tx);

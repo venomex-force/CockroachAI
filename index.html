@@ -26,16 +26,6 @@
     .font-mono-tech { font-family: 'Share Tech Mono', monospace; }
     .font-orbitron { font-family: 'Orbitron', sans-serif; }
     
-    .cyber-border {
-      border: 1px solid rgba(0, 255, 102, 0.2);
-      box-shadow: 0 0 15px rgba(0, 255, 102, 0.05);
-    }
-    
-    .cyber-border:hover {
-      border-color: rgba(0, 255, 102, 0.5);
-      box-shadow: 0 0 25px rgba(0, 255, 102, 0.15);
-    }
-    
     .text-glow {
       text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
     }
@@ -50,9 +40,6 @@
 </head>
 <body class="bg-grid-pattern min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
 
-  <!-- Audio Player Elements -->
-  <audio id="bgMusic" loop src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=cyberpunk-2099-10701.mp3"></audio>
-
   <!-- Navbar -->
   <header class="border-b border-emerald-500/20 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -62,14 +49,11 @@
         </div>
         <div>
           <span class="text-xl font-orbitron font-black tracking-wider bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">COCKROACH AI</span>
-          <span class="block text-[10px] font-mono-tech text-emerald-500/80 tracking-widest">$ROACH // RESILIENCE CORE</span>
+          <span class="block text-[10px] font-mono-tech text-emerald-500/80 tracking-widest">$ROACH // BSC MAINNET</span>
         </div>
       </div>
       
       <div class="flex items-center space-x-4">
-        <button id="musicToggle" onclick="toggleAudio()" class="w-9 h-9 rounded-lg border border-slate-800 bg-slate-900 flex items-center justify-center text-slate-400 hover:text-emerald-400 transition">
-          <i class="fa-solid fa-volume-xmark" id="musicIcon"></i>
-        </button>
         <button id="connectBtn" onclick="connectWallet()" class="bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 font-orbitron font-bold px-5 py-2.5 rounded-lg transition shadow-[0_0_20px_rgba(0,255,102,0.3)] text-xs tracking-wider">
           CONNECT WALLET
         </button>
@@ -80,11 +64,11 @@
   <!-- Main Hero & Presale Interface -->
   <main class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow w-full">
     
-    <!-- Left Column: Vision & Live Metrics -->
+    <!-- Left Column -->
     <div class="lg:col-span-7 space-y-6">
       <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full text-emerald-400 text-xs font-mono-tech">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-        <span>STAGE 1: PROTOCOL RESILIENCE ACTIVE</span>
+        <span>PRESALE CONTRACT DEPLOYED & VERIFIED</span>
       </div>
 
       <h1 class="text-4xl md:text-6xl font-orbitron font-black tracking-tight leading-none">
@@ -92,173 +76,207 @@
       </h1>
 
       <p class="text-slate-400 text-base md:text-lg leading-relaxed">
-        Engineered to survive black-swan events, market capitulations, and network partitions. Powered by decentralised resilient neural networks with automated liquidity burn.
+        Autonomous AI agents built on Binance Smart Chain to survive extreme market volatility. Official token presale router active with verified contract logic.
       </p>
 
       <!-- Protocol Stats Grid -->
       <div class="grid grid-cols-3 gap-4 pt-4 border-t border-slate-800 font-mono-tech">
         <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
-          <p class="text-slate-500 text-xs uppercase">Presale Price</p>
-          <p class="text-lg font-bold text-slate-200 mt-1">1 ETH = 10,000 ROACH</p>
+          <p class="text-slate-500 text-xs uppercase">Token Rate</p>
+          <p class="text-lg font-bold text-slate-200 mt-1">1 USD = 1,000 ROACH</p>
         </div>
         <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
-          <p class="text-slate-500 text-xs uppercase">Hard Cap</p>
-          <p class="text-lg font-bold text-slate-200 mt-1">5,000 ETH</p>
+          <p class="text-slate-500 text-xs uppercase">Pool Allocation</p>
+          <p class="text-lg font-bold text-slate-200 mt-1">400M ROACH</p>
         </div>
         <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800/80">
-          <p class="text-slate-500 text-xs uppercase">Network</p>
-          <p class="text-lg font-bold text-slate-200 mt-1">ERC-20 (Mainnet)</p>
+          <p class="text-slate-500 text-xs uppercase">Chain ID</p>
+          <p class="text-lg font-bold text-slate-200 mt-1">BSC (56)</p>
         </div>
       </div>
 
-      <!-- Presale Progress Meter -->
+      <!-- Presale Progress & Target -->
       <div class="space-y-2 pt-2">
         <div class="flex justify-between text-xs font-mono-tech text-slate-400">
-          <span>Presale Allocation Sold</span>
-          <span class="text-emerald-400 font-bold">68.4% (3,420 / 5,000 ETH)</span>
+          <span>Presale Progress</span>
+          <span class="text-emerald-400 font-bold">$0.00 / $500,000.00 (0.00%)</span>
         </div>
         <div class="w-full bg-slate-900 rounded-full h-3 border border-slate-800 overflow-hidden p-0.5">
-          <div class="bg-gradient-to-r from-emerald-500 to-cyan-400 h-full rounded-full shadow-[0_0_15px_rgba(0,255,102,0.5)]" style="width: 68.4%"></div>
+          <div class="bg-gradient-to-r from-emerald-500 to-cyan-400 h-full rounded-full shadow-[0_0_15px_rgba(0,255,102,0.5)]" style="width: 0%"></div>
         </div>
       </div>
     </div>
 
-    <!-- Right Column: Interactive Presale Terminal -->
+    <!-- Right Column: Presale Engine Card -->
     <div class="lg:col-span-5 bg-slate-900/90 border border-emerald-500/30 rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden backdrop-blur-xl">
       <div class="absolute -top-32 -right-32 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="flex justify-between items-center mb-6 border-b border-slate-800 pb-4">
         <div>
-          <h2 class="text-xl font-orbitron font-bold text-slate-100">JOIN PRESALE</h2>
-          <p class="text-xs font-mono-tech text-emerald-400">INSTANT TOKEN CLAIM ROUTE</p>
+          <h2 class="text-xl font-orbitron font-bold text-slate-100">BUY $ROACH</h2>
+          <p class="text-xs font-mono-tech text-emerald-400">ROACHPRESALEPRO ENGINE</p>
         </div>
-        <span class="text-xs font-mono-tech px-2.5 py-1 bg-slate-800 rounded text-slate-300">GAS: 18 GWEI</span>
+        <span class="text-xs font-mono-tech px-2.5 py-1 bg-slate-800 rounded text-slate-300">STAGE 1</span>
+      </div>
+
+      <!-- Countdown Display -->
+      <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 mb-5 text-center font-mono-tech">
+        <p class="text-slate-500 text-[11px] uppercase tracking-wider mb-1">Presale Launch Window</p>
+        <div id="countdown" class="text-emerald-400 font-bold text-lg">Calculating...</div>
       </div>
 
       <div class="space-y-5">
         <div>
           <div class="flex justify-between text-xs font-mono-tech text-slate-400 mb-1.5">
-            <span>SEND ETHEREUM</span>
-            <span id="userBalanceText">BAL: -- ETH</span>
+            <span>PAY WITH BNB</span>
+            <span id="userBalanceText">BAL: 0.00 BNB</span>
           </div>
           <div class="relative">
-            <input type="number" id="ethInput" min="0.01" step="0.01" placeholder="0.5" oninput="updateCalculation()" class="w-full bg-slate-950 border border-slate-800 focus:border-emerald-400 rounded-xl px-4 py-3.5 text-slate-100 font-mono-tech text-lg focus:outline-none transition">
+            <input type="number" id="bnbInput" min="0.01" step="0.01" placeholder="0.1" oninput="calculateTokens()" class="w-full bg-slate-950 border border-slate-800 focus:border-emerald-400 rounded-xl px-4 py-3.5 text-slate-100 font-mono-tech text-lg focus:outline-none transition">
             <div class="absolute right-3.5 top-3.5 flex items-center space-x-1.5 text-xs font-mono-tech text-slate-400">
-              <span class="font-bold text-slate-200">ETH</span>
+              <span class="font-bold text-slate-200">BNB</span>
             </div>
           </div>
         </div>
 
         <div>
           <div class="flex justify-between text-xs font-mono-tech text-slate-400 mb-1.5">
-            <span>ESTIMATED RECEIVE</span>
-            <span class="text-emerald-400">BONUS +10% AUTO-APPLIED</span>
+            <span>YOU RECEIVE</span>
+            <span class="text-emerald-400">INSTANT CLAIM</span>
           </div>
           <div class="relative">
-            <input type="text" id="roachOutput" readonly placeholder="5,000" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-emerald-400 font-mono-tech font-bold text-lg focus:outline-none cursor-not-allowed">
+            <input type="text" id="roachOutput" readonly placeholder="0" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-emerald-400 font-mono-tech font-bold text-lg focus:outline-none cursor-not-allowed">
             <div class="absolute right-3.5 top-3.5 flex items-center space-x-1.5 text-xs font-mono-tech text-emerald-400">
-              <span class="font-bold">$ROACH</span>
+              <span class="font-bold">ROACH</span>
             </div>
           </div>
         </div>
 
-        <button onclick="handlePurchase()" class="w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:to-cyan-300 text-slate-950 font-orbitron font-extrabold py-4 rounded-xl transition shadow-[0_0_25px_rgba(0,255,102,0.4)] text-sm tracking-widest mt-2 uppercase">
-          BUY $ROACH NOW
+        <button onclick="buyTokensWithBNB()" class="w-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:to-cyan-300 text-slate-950 font-orbitron font-extrabold py-4 rounded-xl transition shadow-[0_0_25px_rgba(0,255,102,0.4)] text-sm tracking-widest mt-2 uppercase">
+          BUY WITH BNB
         </button>
 
         <p class="text-[11px] text-center font-mono-tech text-slate-500">
-          Smart Contract validated. Tokens deliver instantly to Web3 address upon transaction confirmation.
+          Contract: <a href="https://bscscan.com/address/0xf329D4c22e1BCFb8FC661378b6af39d9486eD247#code" target="_blank" class="text-emerald-400/80 underline">0xf329...eD247</a>
         </p>
       </div>
     </div>
   </main>
 
-  <!-- Staking & Intelligence Terminal Footer -->
+  <!-- Footer -->
   <footer class="border-t border-slate-900 bg-slate-950/60 py-6 text-center text-xs font-mono-tech text-slate-500">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div>&copy; 2026 COCKROACH AI LABS. ALL AUTONOMOUS SYSTEMS OPERATIONAL.</div>
+      <div>&copy; 2026 COCKROACH AI LABS. DEPLOYED ON BINANCE SMART CHAIN.</div>
       <div class="flex space-x-6">
-        <a href="https://cockroachai.co" class="hover:text-emerald-400 transition">cockroachai.co</a>
-        <a href="#" class="hover:text-emerald-400 transition">WHITE嚯PAPER</a>
-        <a href="#" class="hover:text-emerald-400 transition">SECURITY AUDIT</a>
+        <a href="https://bscscan.com/token/0x70008f3f24f17Ed6981136B248399dfcEF982078" target="_blank" class="hover:text-emerald-400 transition">TOKEN CONTRACT</a>
+        <a href="https://bscscan.com/address/0xf329D4c22e1BCFb8FC661378b6af39d9486eD247#code" target="_blank" class="hover:text-emerald-400 transition">PRESALE CONTRACT</a>
       </div>
     </div>
   </footer>
 
   <script>
-    let web3Provider, web3Signer, currentAccount;
-    const RATE = 10000; // 1 ETH = 10,000 ROACH
+    window.TOKEN_CONTRACT_ADDRESS = "0x70008f3f24f17Ed6981136B248399dfcEF982078";
+    window.PRESALE_CONTRACT_ADDRESS = "0xf329D4c22e1BCFb8FC661378b6af39d9486eD247";
 
-    function updateCalculation() {
-      const ethVal = parseFloat(document.getElementById('ethInput').value);
-      const out = document.getElementById('roachOutput');
-      if (isNaN(ethVal) || ethVal <= 0) {
-        out.value = '0';
+    const PRESALE_ABI = [
+      "function buyWithBNB() external payable",
+      "function buyWithUSDT(uint256 usdtAmount) external",
+      "function getLatestBNBPrice() public view returns (uint256)",
+      "function tokensPerUSD() public view returns (uint256)"
+    ];
+
+    let provider, signer, userAddress;
+
+    function calculateTokens() {
+      const bnb = parseFloat(document.getElementById('bnbInput').value);
+      const roachOutput = document.getElementById('roachOutput');
+      if (isNaN(bnb) || bnb <= 0) {
+        roachOutput.value = '0';
         return;
       }
-      out.value = (ethVal * RATE).toLocaleString();
+      // Estimated at 1 BNB ~= 600 USD (600,000 ROACH)
+      roachOutput.value = (bnb * 600000).toLocaleString();
     }
 
     async function connectWallet() {
       if (window.ethereum) {
         try {
-          web3Provider = new ethers.providers.Web3Provider(window.ethereum);
-          await web3Provider.send("eth_requestAccounts", []);
-          web3Signer = web3Provider.getSigner();
-          currentAccount = await web3Signer.getAddress();
-          
-          const short = currentAccount.slice(0,6) + '...' + currentAccount.slice(-4);
-          const btn = document.getElementById('connectBtn');
-          btn.innerText = short;
-          btn.classList.remove('bg-gradient-to-r', 'from-emerald-500', 'to-teal-400');
-          btn.classList.add('bg-slate-800', 'border', 'border-emerald-500/40', 'text-emerald-400');
+          provider = new ethers.providers.Web3Provider(window.ethereum);
+          const network = await provider.getNetwork();
+          if (network.chainId !== 56) {
+            try {
+              await window.ethereum.request({
+                method: 'wallet_switchEthereumChain',
+                params: [{ chainId: '0x38' }]
+              });
+            } catch (switchError) {
+              console.error("Please switch to Binance Smart Chain Mainnet (56)");
+            }
+          }
+          await provider.send("eth_requestAccounts", []);
+          signer = provider.getSigner();
+          userAddress = await signer.getAddress();
 
-          const bal = await web3Provider.getBalance(currentAccount);
-          document.getElementById('userBalanceText').innerText = 'BAL: ' + parseFloat(ethers.utils.formatEther(bal)).toFixed(3) + ' ETH';
-        } catch (e) {
-          console.error("Wallet connection denied:", e);
+          const shortAddr = userAddress.substring(0, 6) + '...' + userAddress.substring(userAddress.length - 4);
+          const btn = document.getElementById('connectBtn');
+          btn.innerText = shortAddr;
+          btn.classList.remove('bg-gradient-to-r', 'from-emerald-500', 'to-teal-400');
+          btn.classList.add('bg-slate-800', 'border', 'border-slate-700', 'text-emerald-400');
+
+          const balance = await provider.getBalance(userAddress);
+          document.getElementById('userBalanceText').innerText = 'BAL: ' + parseFloat(ethers.utils.formatEther(balance)).toFixed(3) + ' BNB';
+        } catch (err) {
+          console.error(err);
         }
       } else {
-        alert("Please open in MetaMask, TrustWallet, or a Web3 compatible browser!");
+        alert("Please install MetaMask or a Web3 compatible browser!");
       }
     }
 
-    async function handlePurchase() {
-      const ethVal = document.getElementById('ethInput').value;
-      if (!web3Signer) {
-        alert("Please connect your wallet first.");
+    async function buyTokensWithBNB() {
+      const bnb = document.getElementById('bnbInput').value;
+      if (!signer) {
+        alert("Please connect your wallet first!");
         await connectWallet();
         return;
       }
-      if (!ethVal || parseFloat(ethVal) <= 0) {
-        alert("Enter a valid ETH amount to participate.");
+      if (!bnb || parseFloat(bnb) <= 0) {
+        alert("Please enter a valid BNB amount.");
         return;
       }
 
       try {
-        const tx = await web3Signer.sendTransaction({
-          to: "0x0000000000000000000000000000000000000000",
-          value: ethers.utils.parseEther(ethVal)
+        const presaleContract = new ethers.Contract(window.PRESALE_CONTRACT_ADDRESS, PRESALE_ABI, signer);
+        const tx = await presaleContract.buyWithBNB({
+          value: ethers.utils.parseEther(bnb)
         });
-        alert("Transaction broadcasted! Tx Hash: " + tx.hash);
+        alert("Transaction Broadcasted! Tx Hash: " + tx.hash);
       } catch (err) {
-        alert("Transaction cancelled or rejected by user.");
+        console.error(err);
+        alert("Transaction failed or cancelled.");
       }
     }
 
-    function toggleAudio() {
-      const player = document.getElementById('bgMusic');
-      const icon = document.getElementById('musicIcon');
-      if (player.paused) {
-        player.play();
-        icon.classList.remove('fa-volume-xmark');
-        icon.classList.add('fa-volume-high');
-      } else {
-        player.pause();
-        icon.classList.remove('fa-volume-high');
-        icon.classList.add('fa-volume-xmark');
+    // Launch Window Countdown
+    function updateCountdown() {
+      const launchDate = new Date("2026-09-14T18:30:00+05:30").getTime();
+      const now = new Date().getTime();
+      const diff = launchDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").innerText = "PRESALE STAGE 1 LIVE";
+        return;
       }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
   </script>
 </body>
 </html>
